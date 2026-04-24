@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "GitHub.copilot-chat",
+    "ritwickdey.LiveServer",
+    "ms-vscode.live-server",
+    "esbenp.prettier-vscode",
+    "vscode-icons-team.vscode-icons",
+    "GitHub.vscode-pull-request-github",
+    "MS-CEINTL.vscode-language-pack-de"
+  ]
+}
