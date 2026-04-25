@@ -189,7 +189,12 @@ main {
   display: flex;
   justify-content: center;
   gap: 0.75rem;
-  margin-top: 1rem;
+  padding: 0.75rem 0;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--color-bg);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 10;
 }
 
 .btn-action {

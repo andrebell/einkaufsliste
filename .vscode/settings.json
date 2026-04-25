@@ -5,5 +5,10 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
+  "chat.tools.terminal.autoApprove": {
+    "git add": true,
+    "git commit": true,
+    "git push": true
+  }
 }
