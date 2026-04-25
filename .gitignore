@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor temp files
+*.swp
+*.swo
+*~
+
+# Dependencies (Electron projects)
+node_modules/

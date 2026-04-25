@@ -122,6 +122,8 @@ In der `index.html` muss die Service-Worker-Registrierung so eingebaut werden, d
 - `app.js` — JavaScript-Logik
 - `icons/icon.svg` — App-Icon als SVG
 
+Ergänze außerdem `node_modules/` in der `.gitignore` — damit die installierten Pakete nicht im Repository landen.
+
 ### Schritt 5: Erklären und nächste Schritte
 
 Nach dem Erstellen der Dateien:
