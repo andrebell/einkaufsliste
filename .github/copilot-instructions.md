@@ -116,7 +116,8 @@ Alle Agenten pflegen gemeinsam die Datei `PROJEKT-STATUS.md` im Projektstamm. Di
 Wenn in `PROJEKT-STATUS.md` steht, dass GitHub Pages **aktiv** ist:
 
 - Biete nach jeder Änderung an, die Dateien zu committen und zu pushen (auf Deutsch erklären)
-- Erkläre kurz: "Damit deine Änderungen auch auf der veröffentlichten Seite sichtbar werden, müssen wir sie hochladen."
-- Erhöhe vor dem Commit die Versionsnummer (Feature → Minor, Bugfix → Patch) gemäß den Best Practices
-- Commit-Nachricht IMMER mit Versionsprefix: `[v0.2.0] Beschreibung der Änderung`
+- Erkläre kurz: "Damit du deine Änderungen auf dem Handy testen kannst, müssen wir sie hochladen."
+- Erhöhe vor dem Commit die Dev-Nummer in `APP_VERSION` (z.B. `0.2.0-dev1` → `0.2.0-dev2`) gemäß den Best Practices
+- Commit-Nachricht beschreibend ohne Versionsprefix: `Added search field to filter list`
 - Führe den Commit und Push über das Terminal (das ist das Eingabefenster für Befehle) durch und erkläre dabei was passiert
+- **Release-Commits** (mit Versionsprefix wie `[v0.2.0]`) werden nur beim Veröffentlichen einer fertigen Version erstellt — nicht bei Entwicklungs-Commits

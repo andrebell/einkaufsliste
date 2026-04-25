@@ -32,14 +32,28 @@ Bevor du mit der Veröffentlichung beginnst, prüfe:
 
 Melde dem Nutzer was du gefunden hast und behebe Probleme gemeinsam.
 
-### Schritt 2: Veröffentlichungsweg wählen
+### Schritt 2: Version schneiden (Release)
+
+Prüfe ob es Einträge unter `[Unreleased]` in der `CHANGELOG.md` gibt:
+
+- **Falls ja**: Schneide eine neue Version — folge dem Release-Ablauf aus den Best Practices (`.github/instructions/best-practices.instructions.md`):
+  1. Nächste Versionsnummer bestimmen (Feature → Minor, Bugfix → Patch)
+  2. `APP_VERSION` auf die saubere Version setzen (ohne `-devX`)
+  3. Bei PWA: Cache-Version im Service Worker anpassen
+  4. `[Unreleased]`-Einträge unter neue Versionsüberschrift mit Datum verschieben
+  5. `PROJEKT-STATUS.md` aktualisieren
+  6. Release-Commit erstellen: `[v0.2.0] Zusammenfassung der Änderungen`
+
+- **Falls nein** (keine unreleased Einträge): Die aktuelle Version ist bereits ein Release — weiter zu Schritt 3.
+
+### Schritt 3: Veröffentlichungsweg wählen
 
 Erkläre die Optionen:
 
 - **GitHub Pages** (Standard-Empfehlung): Kostenlos, einfach, direkt aus dem Repository. Perfekt für HTML/CSS/JS Projekte.
 - **PWA erweitern** (optional): Wenn der Nutzer möchte, dass die App auf dem Handy installiert werden kann.
 
-### Schritt 3: GitHub Pages einrichten
+### Schritt 4: GitHub Pages einrichten
 
 Führe den Nutzer durch diese Schritte:
 
@@ -48,7 +62,7 @@ Führe den Nutzer durch diese Schritte:
 3. Erkläre dass die Seite unter `https://NUTZERNAME.github.io/REPONAME/` erreichbar sein wird
 4. Zeige wie man prüft ob die Seite online ist
 
-### Schritt 4: PWA einrichten (nur wenn gewünscht)
+### Schritt 5: PWA einrichten (nur wenn gewünscht)
 
 Falls der Nutzer eine PWA möchte, erstelle automatisch ALLE nötigen Dateien auf einmal:
 
