@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.3.0
+0.3.1
 
 ## Dateien
 
@@ -54,4 +54,4 @@ Keine
 
 ## Letzte Änderung
 
-25.04.2026 — Version 0.3.0 veröffentlicht
+25.04.2026 — Version 0.3.1 veröffentlicht (Bugfix: iPhone Notch-Bereich zeigt jetzt die dunkle Header-Farbe)
