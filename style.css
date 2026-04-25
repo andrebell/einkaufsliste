@@ -29,14 +29,16 @@
   padding: 0;
 }
 
-/* Dark background behind the notch/status bar area */
-html {
-  background-color: var(--color-primary);
-}
-
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background:
+    linear-gradient(
+      to bottom,
+      var(--color-primary) env(safe-area-inset-top, 0px),
+      var(--color-bg) env(safe-area-inset-top, 0px)
+    )
+    no-repeat;
   background-color: var(--color-bg);
   color: var(--color-text);
   min-height: 100dvh;
