@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New items are inserted at the top of the list
 - New items briefly highlight in blue before fading to white
 - Checked items animate and move to the bottom of the list
+- Sort button to order the list alphabetically (A–Z)
 
 ### Fixed
 

@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.2.0-dev4";
+const APP_VERSION = "0.2.0-dev5";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -13,6 +13,7 @@ const itemInput = document.querySelector("#item-input");
 const shoppingList = document.querySelector("#shopping-list");
 const clearSection = document.querySelector("#clear-section");
 const clearAllBtn = document.querySelector("#clear-all-btn");
+const sortBtn = document.querySelector("#sort-btn");
 const appVersionDisplay = document.querySelector("#app-version");
 
 // Show the app version in the footer
@@ -230,6 +231,18 @@ function clearAll() {
   }
 }
 
+// Sort the list alphabetically (A–Z), keeping checked items at the bottom
+function sortAlphabetically() {
+  const unchecked = items.filter((i) => !i.checked);
+  const checked = items.filter((i) => i.checked);
+  const compare = (a, b) => a.name.localeCompare(b.name, "de");
+  unchecked.sort(compare);
+  checked.sort(compare);
+  items = [...unchecked, ...checked];
+  saveItems(items);
+  renderList();
+}
+
 // ===========================
 // Event listeners
 // ===========================
@@ -244,6 +257,9 @@ addForm.addEventListener("submit", (event) => {
 
 // Handle clear all button
 clearAllBtn.addEventListener("click", clearAll);
+
+// Handle sort button
+sortBtn.addEventListener("click", sortAlphabetically);
 
 // ===========================
 // Initial render
