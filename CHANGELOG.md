@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Action buttons moved from sticky bottom bar into a ☰ hamburger menu in the header
 - "Name ändern" is now a menu item instead of a separate icon
 - Own name is no longer shown below your own items (only shows for items from others)
+- Cleaned up dropdown menu: removed divider lines between items
+- Cleaned up import dialog: removed border and lines, using bullet points instead
 
 ### Added
 
