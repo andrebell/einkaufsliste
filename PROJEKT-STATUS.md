@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.2.0-dev8
+0.2.0-dev9
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Button zum Löschen erledigter Einträge hinzugefügt
+25.04.2026 — iPhone Safe Areas (Notch/Home-Bereich) farblich angepasst

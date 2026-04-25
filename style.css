@@ -47,6 +47,9 @@ header {
   color: var(--color-white);
   text-align: center;
   padding: 1rem;
+  padding-top: calc(1rem + env(safe-area-inset-top));
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 header h1 {
@@ -236,7 +239,9 @@ main {
 footer {
   text-align: center;
   padding: 1rem;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   color: var(--color-text-light);
+  background-color: var(--color-bg);
 }
 
 .version-display {

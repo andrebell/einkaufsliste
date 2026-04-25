@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.2.0-dev8";
+const APP_VERSION = "0.2.0-dev9";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
