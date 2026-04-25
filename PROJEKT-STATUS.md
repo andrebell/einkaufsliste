@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.2.0-dev5
+0.2.0-dev6
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Alphabetische Sortierung (A–Z) hinzugefügt
+25.04.2026 — README und SPEC mit allen neuen Features aktualisiert
