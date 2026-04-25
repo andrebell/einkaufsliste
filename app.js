@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev7";
+const APP_VERSION = "0.3.0-dev8";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -480,12 +480,14 @@ document.addEventListener("click", (e) => {
 });
 
 // Close dropdown after any action button is clicked
-[shareBtn, sortBtn, clearCheckedBtn, clearAllBtn, settingsBtn].forEach((btn) => {
-  btn.addEventListener("click", () => {
-    dropdownMenu.classList.add("hidden");
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
-});
+[shareBtn, sortBtn, clearCheckedBtn, clearAllBtn, settingsBtn].forEach(
+  (btn) => {
+    btn.addEventListener("click", () => {
+      dropdownMenu.classList.add("hidden");
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  },
+);
 
 // ===========================
 // Event listeners
