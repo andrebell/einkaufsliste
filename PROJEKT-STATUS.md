@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.2.0-dev7
+0.2.0-dev8
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Button-Hover auf Touchscreens repariert (blieb dunkel kleben)
+25.04.2026 — Button zum Löschen erledigter Einträge hinzugefügt

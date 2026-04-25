@@ -14,16 +14,17 @@ PWA (Progressive Web App) — läuft im Browser, kann auf dem Handy installiert 
 2. **Eintrag abhaken** — Per Tippen auf die Checkbox wird ein Eintrag als erledigt markiert. Abgehakte Einträge werden durchgestrichen dargestellt und gleiten mit einer Slide-Animation ans Ende der Liste.
 3. **Eintrag löschen** — Jeder Eintrag hat einen Löschen-Button, der ihn einzeln von der Liste entfernt.
 4. **Ganze Liste löschen** — Ein Button löscht alle Einträge auf einmal. Vor dem Löschen wird eine Sicherheitsabfrage angezeigt.
-5. **Alphabetisch sortieren** — Ein Button sortiert die Liste von A–Z. Abgehakte Einträge bleiben unten, werden aber ebenfalls untereinander sortiert. Verwendet deutsche Sortierung (Umlaute korrekt).
-6. **Daten speichern** — Die Liste wird automatisch im lokalen Speicher des Geräts gespeichert und beim nächsten Öffnen wiederhergestellt.
-7. **Offline-Nutzung** — Die App funktioniert auch ohne Internetverbindung (Service Worker mit Network-First Strategie).
+5. **Erledigte löschen** — Ein Button entfernt nur die abgehakten Einträge, die offenen bleiben erhalten.
+6. **Alphabetisch sortieren** — Ein Button sortiert die Liste von A–Z. Abgehakte Einträge bleiben unten, werden aber ebenfalls untereinander sortiert. Verwendet deutsche Sortierung (Umlaute korrekt).
+7. **Daten speichern** — Die Liste wird automatisch im lokalen Speicher des Geräts gespeichert und beim nächsten Öffnen wiederhergestellt.
+8. **Offline-Nutzung** — Die App funktioniert auch ohne Internetverbindung (Service Worker mit Network-First Strategie).
 
 ## Benutzeroberfläche
 
 - **Kopfbereich**: App-Name "Einkaufsliste" mit einem Einkaufswagen-Symbol
 - **Eingabebereich**: Textfeld zum Eintippen + kompakter „+“-Button daneben
 - **Listenbereich**: Die Einkaufseinträge untereinander. Jeder Eintrag hat links eine Checkbox und rechts einen Löschen-Button. Neue Einträge erscheinen oben, abgehakte wandern nach unten.
-- **Aktionsbereich**: „A–Z Sortieren“- und „Alles löschen“-Button nebeneinander unterhalb der Liste (nur sichtbar wenn Einträge vorhanden)
+- **Aktionsbereich**: „A–Z Sortieren“-, „Erledigte löschen“- und „Alles löschen“-Button nebeneinander unterhalb der Liste (nur sichtbar wenn Einträge vorhanden)
 - **Fußzeile**: Versionsnummer der App
 
 ## Design

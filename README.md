@@ -8,6 +8,7 @@ Eine einfache Einkaufslisten-App für das Handy. Damit behältst du im Supermark
 - **Einträge abhaken** — Was schon im Wagen liegt, kannst du als erledigt markieren. Abgehakte Einträge gleiten automatisch ans Ende der Liste.
 - **Einträge löschen** — Sachen, die du nicht mehr brauchst, von der Liste entfernen
 - **Liste sortieren** — Per Knopfdruck die Einträge alphabetisch (A–Z) ordnen
+- **Erledigte löschen** — Alle abgehakten Einträge auf einmal entfernen
 - **Ganze Liste löschen** — Nach dem Einkauf die komplette Liste auf einmal leeren
 
 ## Für wen?

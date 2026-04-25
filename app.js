@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.2.0-dev7";
+const APP_VERSION = "0.2.0-dev8";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -13,6 +13,7 @@ const itemInput = document.querySelector("#item-input");
 const shoppingList = document.querySelector("#shopping-list");
 const clearSection = document.querySelector("#clear-section");
 const clearAllBtn = document.querySelector("#clear-all-btn");
+const clearCheckedBtn = document.querySelector("#clear-checked-btn");
 const sortBtn = document.querySelector("#sort-btn");
 const appVersionDisplay = document.querySelector("#app-version");
 
@@ -231,6 +232,15 @@ function clearAll() {
   }
 }
 
+// Clear only checked items from the list
+function clearChecked() {
+  const checkedCount = items.filter((i) => i.checked).length;
+  if (checkedCount === 0) return;
+  items = items.filter((i) => !i.checked);
+  saveItems(items);
+  renderList();
+}
+
 // Sort the list alphabetically (A–Z), keeping checked items at the bottom
 function sortAlphabetically() {
   const unchecked = items.filter((i) => !i.checked);
@@ -257,6 +267,9 @@ addForm.addEventListener("submit", (event) => {
 
 // Handle clear all button
 clearAllBtn.addEventListener("click", clearAll);
+
+// Handle clear checked button
+clearCheckedBtn.addEventListener("click", clearChecked);
 
 // Handle sort button
 sortBtn.addEventListener("click", sortAlphabetically);
