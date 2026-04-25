@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev0";
+const APP_VERSION = "0.3.0-dev1";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -78,10 +78,11 @@ function renderList() {
     checkbox.setAttribute("aria-label", "Abhaken: " + item.name);
     checkbox.addEventListener("change", () => toggleItem(item.id));
 
-    // Item name
+    // Item name (tap to edit)
     const nameSpan = document.createElement("span");
     nameSpan.className = "item-name";
     nameSpan.textContent = item.name;
+    nameSpan.addEventListener("click", () => startEditItem(item.id, nameSpan));
 
     // Delete button
     const deleteBtn = document.createElement("button");
@@ -221,6 +222,44 @@ function deleteItem(id) {
   items = items.filter((i) => i.id !== id);
   saveItems(items);
   renderList();
+}
+
+// Edit an item inline (replace span with input field)
+function startEditItem(id, spanElement) {
+  const item = items.find((i) => i.id === id);
+  if (!item) return;
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.className = "item-edit-input";
+  input.value = item.name;
+
+  // Replace the span with the input
+  spanElement.replaceWith(input);
+  input.focus();
+  input.select();
+
+  // Save on Enter or when leaving the field
+  const saveEdit = () => {
+    const newName = input.value.trim();
+    if (newName !== "" && newName !== item.name) {
+      item.name = newName;
+      saveItems(items);
+    }
+    renderList();
+  };
+
+  input.addEventListener("blur", saveEdit);
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      input.blur();
+    }
+    if (e.key === "Escape") {
+      input.removeEventListener("blur", saveEdit);
+      renderList();
+    }
+  });
 }
 
 // Clear all items from the list

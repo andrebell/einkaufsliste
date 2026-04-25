@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Action buttons (sort, clear) are now sticky at the bottom of the screen
 
+### Added
+
+- Inline editing: tap on an item name to edit it (confirm with Enter, cancel with Escape)
+
 ## [0.2.0] - 2026-04-25
 
 ### Added

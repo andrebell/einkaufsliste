@@ -151,6 +151,20 @@ main {
   flex: 1;
   font-size: 1rem;
   word-break: break-word;
+  cursor: text;
+}
+
+/* Inline edit input for item names */
+.item-edit-input {
+  flex: 1;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.25rem 0.4rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 4px;
+  outline: none;
+  background-color: var(--color-white);
+  min-width: 0;
 }
 
 /* Checked items get a strikethrough and lighter color */

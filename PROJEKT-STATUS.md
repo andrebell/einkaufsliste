@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.3.0-dev0
+0.3.0-dev1
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Sticky Action-Buttons (Buttons kleben am unteren Bildschirmrand)
+25.04.2026 — Inline-Editing: Einträge können per Tippen bearbeitet werden

@@ -5,6 +5,7 @@ Eine einfache Einkaufslisten-App für das Handy. Damit behältst du im Supermark
 ## Was kann die App?
 
 - **Einträge hinzufügen** — Tippe ein, was du einkaufen willst, und füge es zur Liste hinzu. Neue Einträge erscheinen ganz oben und leuchten kurz blau auf.
+- **Einträge bearbeiten** — Tipp auf einen Eintrag, um den Text direkt zu ändern
 - **Einträge abhaken** — Was schon im Wagen liegt, kannst du als erledigt markieren. Abgehakte Einträge gleiten automatisch ans Ende der Liste.
 - **Einträge löschen** — Sachen, die du nicht mehr brauchst, von der Liste entfernen
 - **Liste sortieren** — Per Knopfdruck die Einträge alphabetisch (A–Z) ordnen
