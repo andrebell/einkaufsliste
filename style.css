@@ -32,24 +32,11 @@
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: var(--color-bg);
+  background-color: var(--color-primary);
   color: var(--color-text);
-  min-height: 100dvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-/* ===========================
-   Notch cover — Dark bar behind the iPhone status bar
-   =========================== */
-.notch-cover {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: env(safe-area-inset-top, 0px);
-  background-color: var(--color-primary);
-  z-index: 999;
 }
 
 /* ===========================
@@ -158,6 +145,7 @@ main {
   width: 100%;
   margin: 0 auto;
   padding: 1rem;
+  background-color: var(--color-bg);
 }
 
 /* ===========================

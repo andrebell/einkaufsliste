@@ -10,3 +10,4 @@ desktop.ini
 
 # Dependencies (Electron projects)
 node_modules/
+docs/ios-pwa.md
