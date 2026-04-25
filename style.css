@@ -313,7 +313,7 @@ footer {
    Utility classes
    =========================== */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Screen reader only — visually hidden but accessible */

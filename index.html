@@ -32,7 +32,9 @@
         id="settings-btn"
         class="btn-settings"
         aria-label="Einstellungen"
-      >⚙️</button>
+      >
+        ⚙️
+      </button>
     </header>
 
     <main>
@@ -53,7 +55,11 @@
 
       <!-- Action buttons (only visible when list has items) -->
       <div id="clear-section" class="action-section hidden">
-        <button type="button" id="share-btn" class="btn-action btn-action-share">
+        <button
+          type="button"
+          id="share-btn"
+          class="btn-action btn-action-share"
+        >
           📤 Teilen
         </button>
         <button type="button" id="sort-btn" class="btn-action">
@@ -83,7 +89,9 @@
     <div id="name-dialog" class="dialog-overlay hidden">
       <div class="dialog-box">
         <h2 id="name-dialog-title">Wie heißt du?</h2>
-        <p class="dialog-hint">Dein Name wird bei geteilten Einträgen angezeigt.</p>
+        <p class="dialog-hint">
+          Dein Name wird bei geteilten Einträgen angezeigt.
+        </p>
         <form id="name-form">
           <input
             type="text"
@@ -104,8 +112,12 @@
         <p id="import-info" class="dialog-hint"></p>
         <ul id="import-preview" class="import-preview-list"></ul>
         <div class="dialog-buttons">
-          <button type="button" id="import-cancel-btn" class="btn-action">Abbrechen</button>
-          <button type="button" id="import-confirm-btn" class="btn-accent">Hinzufügen</button>
+          <button type="button" id="import-cancel-btn" class="btn-action">
+            Abbrechen
+          </button>
+          <button type="button" id="import-confirm-btn" class="btn-accent">
+            Hinzufügen
+          </button>
         </div>
       </div>
     </div>

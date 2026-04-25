@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev4";
+const APP_VERSION = "0.3.0-dev5";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -334,9 +334,7 @@ function saveUsername(name) {
 
 // Show the name dialog (for first setup or editing)
 function showNameDialog(isFirstTime) {
-  nameDialogTitle.textContent = isFirstTime
-    ? "Wie heißt du?"
-    : "Name ändern";
+  nameDialogTitle.textContent = isFirstTime ? "Wie heißt du?" : "Name ändern";
   nameInput.value = isFirstTime ? "" : loadUsername();
   nameDialog.classList.remove("hidden");
   nameInput.focus();
@@ -372,9 +370,7 @@ function shareList() {
     addedBy: i.addedBy || loadUsername(),
   }));
 
-  const encoded = btoa(
-    unescape(encodeURIComponent(JSON.stringify(shareData))),
-  );
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(shareData))));
   const shareUrl =
     window.location.origin + window.location.pathname + "?import=" + encoded;
 
@@ -404,9 +400,7 @@ function checkForImport() {
   if (!importData) return;
 
   try {
-    const decoded = JSON.parse(
-      decodeURIComponent(escape(atob(importData))),
-    );
+    const decoded = JSON.parse(decodeURIComponent(escape(atob(importData))));
 
     if (!Array.isArray(decoded) || decoded.length === 0) return;
 

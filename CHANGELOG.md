@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Dialogs (name, import) were always visible because CSS `.hidden` class was overridden by `.dialog-overlay`
+
 ### Changed
 
 - Action buttons (sort, clear) are now sticky at the bottom of the screen
