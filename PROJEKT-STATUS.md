@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.3.0-dev7
+0.3.0
 
 ## Dateien
 
@@ -34,10 +34,10 @@ Alle geplanten Features sind implementiert:
 - ✅ Ganze Liste löschen (mit Sicherheitsabfrage)
 - ✅ Erledigte löschen
 - ✅ Alphabetisch sortieren (A–Z)
-- ✅ Nutzername einrichten und ändern (Zahnrad im Header)
-- ✅ Name bei Einträgen anzeigen (wer hat was hinzugefügt)
+- ✅ Nutzername einrichten und ändern (☰ Menü im Header)
+- ✅ Name bei Einträgen anzeigen (nur bei fremden Einträgen)
 - ✅ Liste teilen per Web Share API / Link (Import mit Vorschau-Dialog)
-- ✅ Dropdown-Menü im Header (⋯) für Aktionen (Teilen, Sortieren, Löschen)
+- ✅ Hamburger-Menü (☰) für Aktionen (Teilen, Sortieren, Löschen, Name ändern)
 - ✅ Daten bleiben nach dem Schließen gespeichert (localStorage)
 - ✅ Offline-Nutzung (Service Worker)
 - ✅ Installierbar auf dem Handy (PWA)
@@ -50,8 +50,8 @@ Alle geplanten Features sind implementiert:
 
 ## Offene Punkte
 
-- Version 0.3.0 veröffentlichen (Release)
+Keine
 
 ## Letzte Änderung
 
-25.04.2026 — Hamburger-Menü (☰), Name ändern im Menü, eigener Name wird nicht unter eigenen Einträgen angezeigt
+25.04.2026 — Version 0.3.0 veröffentlicht
