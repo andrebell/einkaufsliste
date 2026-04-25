@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Einkaufsliste</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#3a3f47" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Einkaufsliste" />
+    <link rel="apple-touch-icon" href="icons/icon.svg" />
+
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🛒 Einkaufsliste</h1>
+    </header>
+
+    <main>
+      <!-- Input area for adding new items -->
+      <form id="add-form" class="add-form">
+        <label for="item-input" class="sr-only">Neuer Eintrag</label>
+        <input
+          type="text"
+          id="item-input"
+          placeholder="Was brauchst du?"
+          autocomplete="off"
+        />
+        <button type="submit" class="btn-add" aria-label="Hinzufügen">+</button>
+      </form>
+
+      <!-- Shopping list -->
+      <ul id="shopping-list" class="shopping-list"></ul>
+
+      <!-- Clear all button (only visible when list has items) -->
+      <div id="clear-section" class="clear-section hidden">
+        <button type="button" id="clear-all-btn" class="btn-clear">
+          Alles löschen
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <small class="version-display">v<span id="app-version"></span></small>
+    </footer>
+
+    <!-- App logic -->
+    <script src="app.js" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then((registration) => {
+            registration.addEventListener("updatefound", () => {
+              const newWorker = registration.installing;
+              newWorker.addEventListener("statechange", () => {
+                if (newWorker.state === "activated") {
+                  window.location.reload();
+                }
+              });
+            });
+          });
+      }
+    </script>
+  </body>
+</html>

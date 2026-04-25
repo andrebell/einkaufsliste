@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#4a90d9">
+    <!-- Shopping cart icon -->
+    <circle cx="176" cy="432" r="40" />
+    <circle cx="384" cy="432" r="40" />
+    <path d="M32 32h48l11.4 48H496l-60 240H168L96 32zm124 320h264l48-192H123.2L108 80H80L96 160z" fill="none"
+        stroke="#4a90d9" stroke-width="8" />
+    <path d="M80 80h16l68 272h264l48-192H115.2" fill="none" stroke="#4a90d9" stroke-width="32" stroke-linecap="round"
+        stroke-linejoin="round" />
+    <path d="M160 352h272" fill="none" stroke="#4a90d9" stroke-width="32" stroke-linecap="round" />
+</svg>

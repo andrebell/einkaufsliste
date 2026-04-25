@@ -1,43 +1,18 @@
-# ✨ Vibe Starter
+# 🛒 Einkaufsliste
 
-**Deine Idee. Deine App. Ohne eine Zeile Code selbst zu schreiben.**
+Eine einfache Einkaufslisten-App für das Handy. Damit behältst du im Supermarkt den Überblick, was du noch brauchst.
 
-Beschreibe einfach, was du bauen möchtest — GitHub Copilot macht den Rest.
-Ob Einkaufsliste, Rezeptsammlung, Lernkarten oder Gewohnheitstracker —
-in wenigen Minuten hast du eine echte App, die auf jedem Gerät läuft.
+## Was kann die App?
 
-> _"Ich möchte eine Einkaufsliste, bei der ich Sachen abhaken kann"_
-> — Das reicht. Copilot baut sie für dich.
+- **Einträge hinzufügen** — Tippe ein, was du einkaufen willst, und füge es zur Liste hinzu
+- **Einträge abhaken** — Was schon im Wagen liegt, kannst du als erledigt markieren
+- **Einträge löschen** — Sachen, die du nicht mehr brauchst, von der Liste entfernen
+- **Ganze Liste löschen** — Nach dem Einkauf die komplette Liste auf einmal leeren
 
-## 🚀 So geht's los
+## Für wen?
 
-1. Klicke oben auf **"Fork"** und gib deinem Projekt einen Namen
-2. Öffne es in VS Code (→ [Anleitung](docs/README.md))
-3. Tippe `/neue-app` im Copilot Chat
-4. Beschreibe deine Idee — fertig!
+Die App ist für den persönlichen Gebrauch auf dem Handy gedacht. Du kannst sie auf deinem Startbildschirm ablegen und wie eine normale App nutzen — auch ohne Internetverbindung im Supermarkt.
 
-**Noch nie programmiert? Perfekt.** Dieses Repo ist genau dafür gemacht.
+## Typ
 
-## 💡 Was du damit bauen kannst
-
-- 🛒 Einkaufslisten und To-Do-Apps
-- 🍳 Rezeptsammlungen und Kochbücher
-- 📚 Lernkarten und Vokabeltrainer
-- 🏋️ Fitness- und Gewohnheitstracker
-- 📊 Budgetplaner und Haushaltsbücher
-- … oder was immer dir einfällt!
-
-## 🤖 Deine Helfer
-
-| Befehl im Chat         | Was passiert                               |
-| ---------------------- | ------------------------------------------ |
-| `/neue-app`            | Startet ein neues Projekt mit dir zusammen |
-| `/feature-hinzufuegen` | Baut eine neue Funktion ein                |
-| `/fehler-beheben`      | Findet und repariert Probleme              |
-| `/veroeffentlichen`    | Bringt deine App ins Internet              |
-
-## 📖 Ausführliche Anleitung
-
-Die vollständige Schritt-für-Schritt Anleitung — von der Installation bis zur Veröffentlichung — findest du hier:
-
-**[→ Zur Anleitung](docs/README.md)**
+PWA (Progressive Web App) — läuft im Browser, kann auf dem Handy installiert werden und funktioniert auch offline.
