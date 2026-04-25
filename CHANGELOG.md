@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Action buttons (sort, clear) are now sticky at the bottom of the screen
+- Header title is now left-aligned
+- Action buttons moved from sticky bottom bar into a ⋯ dropdown menu in the header
 
 ### Added
 

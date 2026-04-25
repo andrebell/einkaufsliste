@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.3.0-dev4
+0.3.0-dev6
 
 ## Dateien
 
@@ -37,7 +37,7 @@ Alle geplanten Features sind implementiert:
 - ✅ Nutzername einrichten und ändern (Zahnrad im Header)
 - ✅ Name bei Einträgen anzeigen (wer hat was hinzugefügt)
 - ✅ Liste teilen per Web Share API / Link (Import mit Vorschau-Dialog)
-- ✅ Sticky Action-Buttons (bleiben am unteren Bildschirmrand)
+- ✅ Dropdown-Menü im Header (⋯) für Aktionen (Teilen, Sortieren, Löschen)
 - ✅ Daten bleiben nach dem Schließen gespeichert (localStorage)
 - ✅ Offline-Nutzung (Service Worker)
 - ✅ Installierbar auf dem Handy (PWA)
@@ -54,4 +54,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Liste teilen per Share-Button mit Import-Funktion
+25.04.2026 — Titel linksbündig, Action-Buttons in Dropdown-Menü im Header verschoben

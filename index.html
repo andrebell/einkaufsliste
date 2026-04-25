@@ -27,14 +27,29 @@
   <body>
     <header>
       <h1>🛒 Einkaufsliste</h1>
-      <button
-        type="button"
-        id="settings-btn"
-        class="btn-settings"
-        aria-label="Einstellungen"
-      >
-        ⚙️
-      </button>
+      <div class="header-actions">
+        <div class="menu-wrapper">
+          <button
+            type="button"
+            id="menu-btn"
+            class="btn-header"
+            aria-label="Menü"
+            aria-expanded="false"
+          >⋯</button>
+          <div id="dropdown-menu" class="dropdown-menu hidden">
+            <button type="button" id="share-btn" class="dropdown-item">📤 Teilen</button>
+            <button type="button" id="sort-btn" class="dropdown-item">🔤 A–Z Sortieren</button>
+            <button type="button" id="clear-checked-btn" class="dropdown-item">✅ Erledigte löschen</button>
+            <button type="button" id="clear-all-btn" class="dropdown-item dropdown-item-danger">🗑️ Alles löschen</button>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="settings-btn"
+          class="btn-header"
+          aria-label="Einstellungen"
+        >⚙️</button>
+      </div>
     </header>
 
     <main>
@@ -52,30 +67,6 @@
 
       <!-- Shopping list -->
       <ul id="shopping-list" class="shopping-list"></ul>
-
-      <!-- Action buttons (only visible when list has items) -->
-      <div id="clear-section" class="action-section hidden">
-        <button
-          type="button"
-          id="share-btn"
-          class="btn-action btn-action-share"
-        >
-          📤 Teilen
-        </button>
-        <button type="button" id="sort-btn" class="btn-action">
-          A–Z Sortieren
-        </button>
-        <button type="button" id="clear-checked-btn" class="btn-action">
-          Erledigte löschen
-        </button>
-        <button
-          type="button"
-          id="clear-all-btn"
-          class="btn-action btn-action-danger"
-        >
-          Alles löschen
-        </button>
-      </div>
     </main>
 
     <footer>
@@ -112,7 +103,7 @@
         <p id="import-info" class="dialog-hint"></p>
         <ul id="import-preview" class="import-preview-list"></ul>
         <div class="dialog-buttons">
-          <button type="button" id="import-cancel-btn" class="btn-action">
+          <button type="button" id="import-cancel-btn" class="btn-cancel">
             Abbrechen
           </button>
           <button type="button" id="import-confirm-btn" class="btn-accent">

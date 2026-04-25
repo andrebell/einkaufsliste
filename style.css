@@ -45,12 +45,13 @@ body {
 header {
   background-color: var(--color-primary);
   color: var(--color-white);
-  text-align: center;
   padding: 1rem;
   padding-top: calc(1rem + env(safe-area-inset-top));
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  position: relative;
+  padding-left: calc(1rem + env(safe-area-inset-left));
+  padding-right: calc(1rem + env(safe-area-inset-right));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header h1 {
@@ -58,25 +59,80 @@ header h1 {
   font-weight: 600;
 }
 
-/* Settings button in header */
-.btn-settings {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+/* Header action buttons row */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Shared style for header icon buttons */
+.btn-header {
   background: none;
   border: none;
   font-size: 1.3rem;
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 0.4rem;
   line-height: 1;
   opacity: 0.7;
   transition: opacity 0.2s;
+  color: inherit;
 }
 
-.btn-settings:hover,
-.btn-settings:focus {
+.btn-header:hover,
+.btn-header:focus {
   opacity: 1;
+}
+
+/* Dropdown menu wrapper */
+.menu-wrapper {
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  min-width: 200px;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  color: var(--color-text);
+  transition: background-color 0.15s;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--color-bg);
+}
+
+.dropdown-item-danger {
+  color: var(--color-danger);
+}
+
+.dropdown-item-danger:hover,
+.dropdown-item-danger:focus {
+  background-color: rgba(217, 83, 79, 0.08);
 }
 
 /* ===========================
@@ -238,63 +294,6 @@ main {
 }
 
 /* ===========================
-   Action section — Sort and clear buttons
-   =========================== */
-.action-section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
-  position: sticky;
-  bottom: 0;
-  background-color: var(--color-bg);
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
-  z-index: 10;
-}
-
-.btn-action {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.95rem;
-  color: var(--color-text-light);
-  background-color: var(--color-white);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition:
-    background-color 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-}
-
-/* Only show hover styles on devices with a mouse pointer */
-@media (hover: hover) {
-  .btn-action:hover {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-white);
-  }
-
-  .btn-action-danger:hover {
-    background-color: var(--color-danger);
-    border-color: var(--color-danger);
-    color: var(--color-white);
-  }
-}
-
-.btn-action:focus-visible {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.btn-action-danger:focus-visible {
-  background-color: var(--color-danger);
-  border-color: var(--color-danger);
-  color: var(--color-white);
-}
-
-/* ===========================
    Footer — Version display
    =========================== */
 footer {
@@ -401,8 +400,15 @@ footer {
   gap: 0.75rem;
 }
 
-.dialog-buttons .btn-action {
+.dialog-buttons .btn-cancel {
   flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: var(--color-text-light);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
 }
 
 .dialog-buttons .btn-accent {
@@ -428,20 +434,6 @@ footer {
 
 .import-preview-list li:last-child {
   border-bottom: none;
-}
-
-/* Share button accent color */
-.btn-action-share {
-  color: var(--color-accent);
-  border-color: var(--color-accent);
-}
-
-@media (hover: hover) {
-  .btn-action-share:hover {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-    color: var(--color-white);
-  }
 }
 
 /* ===========================

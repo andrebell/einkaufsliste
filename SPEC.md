@@ -24,10 +24,10 @@ PWA (Progressive Web App) — läuft im Browser, kann auf dem Handy installiert 
 
 ## Benutzeroberfläche
 
-- **Kopfbereich**: App-Name "Einkaufsliste" mit einem Einkaufswagen-Symbol
+- **Kopfbereich**: App-Name "Einkaufsliste" linksbündig mit einem Einkaufswagen-Symbol, rechts ein ⋯-Menü-Icon (für Aktionen) und ein ⚙️-Icon (für Einstellungen)
 - **Eingabebereich**: Textfeld zum Eintippen + kompakter „+“-Button daneben
 - **Listenbereich**: Die Einkaufseinträge untereinander. Jeder Eintrag hat links eine Checkbox und rechts einen Löschen-Button. Neue Einträge erscheinen oben, abgehakte wandern nach unten.
-- **Aktionsbereich**: „A–Z Sortieren"-, „Erledigte löschen"- und „Alles löschen"-Button nebeneinander, sticky am unteren Bildschirmrand fixiert (nur sichtbar wenn Einträge vorhanden)
+- **Aktionsbereich**: „Teilen"-, „A–Z Sortieren"-, „Erledigte löschen"- und „Alles löschen"-Button in einem Dropdown-Menü hinter dem ⋯-Icon im Header
 - **Fußzeile**: Versionsnummer der App
 
 ## Design

@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev5";
+const APP_VERSION = "0.3.0-dev6";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -12,12 +12,13 @@ let animating = false;
 const addForm = document.querySelector("#add-form");
 const itemInput = document.querySelector("#item-input");
 const shoppingList = document.querySelector("#shopping-list");
-const clearSection = document.querySelector("#clear-section");
 const clearAllBtn = document.querySelector("#clear-all-btn");
 const clearCheckedBtn = document.querySelector("#clear-checked-btn");
 const sortBtn = document.querySelector("#sort-btn");
 const appVersionDisplay = document.querySelector("#app-version");
 const settingsBtn = document.querySelector("#settings-btn");
+const menuBtn = document.querySelector("#menu-btn");
+const dropdownMenu = document.querySelector("#dropdown-menu");
 const nameDialog = document.querySelector("#name-dialog");
 const nameDialogTitle = document.querySelector("#name-dialog-title");
 const nameForm = document.querySelector("#name-form");
@@ -71,12 +72,8 @@ function renderList() {
     emptyMsg.className = "empty-message";
     emptyMsg.textContent = "Deine Liste ist leer — füge etwas hinzu!";
     shoppingList.appendChild(emptyMsg);
-    clearSection.classList.add("hidden");
     return;
   }
-
-  // Show the clear button when there are items
-  clearSection.classList.remove("hidden");
 
   // Create a list item for each entry
   items.forEach((item) => {
@@ -458,6 +455,34 @@ importCancelBtn.addEventListener("click", () => {
 
 // Handle share button
 shareBtn.addEventListener("click", shareList);
+
+// ===========================
+// Dropdown menu
+// ===========================
+
+// Toggle the dropdown menu
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const isOpen = !dropdownMenu.classList.contains("hidden");
+  dropdownMenu.classList.toggle("hidden");
+  menuBtn.setAttribute("aria-expanded", !isOpen);
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", (e) => {
+  if (!dropdownMenu.classList.contains("hidden") && !dropdownMenu.contains(e.target)) {
+    dropdownMenu.classList.add("hidden");
+    menuBtn.setAttribute("aria-expanded", "false");
+  }
+});
+
+// Close dropdown after any action button is clicked
+[shareBtn, sortBtn, clearCheckedBtn, clearAllBtn].forEach((btn) => {
+  btn.addEventListener("click", () => {
+    dropdownMenu.classList.add("hidden");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
 
 // ===========================
 // Event listeners
