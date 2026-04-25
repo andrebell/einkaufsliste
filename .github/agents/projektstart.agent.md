@@ -127,7 +127,7 @@ In der `index.html` muss die Service-Worker-Registrierung so eingebaut werden, d
 Nach dem Erstellen der Dateien:
 
 1. Stelle sicher, dass die App eine `APP_VERSION` Variable hat (starte mit `"0.1.0-dev0"`) und die Versionsnummer im Footer oder Info-Bereich sichtbar angezeigt wird — gemäß den Best Practices in `.github/instructions/best-practices.instructions.md`
-2. Ergänze den ersten Eintrag in der `CHANGELOG.md` unter `[Unreleased]` (auf Englisch, Kategorie `Added`, z.B. `- Initial version with basic functionality`)
+2. Ergänze den ersten Eintrag in der `CHANGELOG.md` unter `## [Unreleased]` → `### Added` (auf Englisch, z.B. `- Initial version with basic functionality`). Falls die Section `### Added` noch nicht existiert, erstelle sie.
 3. Erstelle oder aktualisiere die `PROJEKT-STATUS.md` mit: Was wurde gebaut, welche Dateien gibt es, aktuelle Version, was funktioniert, was sind mögliche nächste Schritte
 4. Erkläre kurz welche Dateien erstellt wurden und was jede tut
 5. Zeige wie man das Ergebnis ansehen kann (Live Server starten)

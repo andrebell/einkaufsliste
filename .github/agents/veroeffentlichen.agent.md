@@ -36,13 +36,7 @@ Melde dem Nutzer was du gefunden hast und behebe Probleme gemeinsam.
 
 Prüfe ob es Einträge unter `[Unreleased]` in der `CHANGELOG.md` gibt:
 
-- **Falls ja**: Schneide eine neue Version — folge dem Release-Ablauf aus den Best Practices (`.github/instructions/best-practices.instructions.md`):
-  1. Nächste Versionsnummer bestimmen (Feature → Minor, Bugfix → Patch)
-  2. `APP_VERSION` auf die saubere Version setzen (ohne `-devX`)
-  3. Bei PWA: Cache-Version im Service Worker anpassen
-  4. `[Unreleased]`-Einträge unter neue Versionsüberschrift mit Datum verschieben
-  5. `PROJEKT-STATUS.md` aktualisieren
-  6. Release-Commit erstellen: `[v0.2.0] Zusammenfassung der Änderungen`
+- **Falls ja**: Schneide eine neue Version — befolge dafür vollständig den "Ablauf beim Release (Version schneiden)" aus den Best Practices (`.github/instructions/best-practices.instructions.md`). Dort sind alle Schritte beschrieben, inklusive der Major-Prüfung bei umfangreichen Updates.
 
 - **Falls nein** (keine unreleased Einträge): Die aktuelle Version ist bereits ein Release — weiter zu Schritt 3.
 
