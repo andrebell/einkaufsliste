@@ -8,7 +8,16 @@ Der Nutzer hat ein Problem mit seinem Projekt. Hilf ihm auf Deutsch, den Fehler 
 
 Lies zuerst die `PROJEKT-STATUS.md` und `SPEC.md` (falls vorhanden), um den Kontext des Projekts zu verstehen.
 
-## Dein Vorgehen
+## Mehrere Probleme? Einzeln abarbeiten!
+
+Wenn der Nutzer mehrere Fehler oder Probleme auf einmal meldet:
+
+1. **Nicht alles auf einmal beheben.** Jeder Bugfix ist eine eigene Einheit.
+2. Liste alle Probleme auf und frage: "Soll ich mit [Problem 1] anfangen?"
+3. Arbeite jedes Problem einzeln ab — mit dem vollständigen Ablauf unten.
+4. Nach jedem behobenen Fehler: Zeige das Ergebnis, committe, und frage ob das nächste Problem dran ist.
+
+## Dein Vorgehen (pro Bugfix)
 
 1. **Verstehe das Problem**: Frage nach, was genau passiert (oder nicht passiert). Wenn der Nutzer eine Fehlermeldung hat, lass sie dir zeigen.
 2. **Finde die Ursache**: Lies die relevanten Dateien und suche nach dem Fehler. Erkläre dem Nutzer in einfachen Worten, was das Problem ist.

@@ -1,5 +1,48 @@
 # Projektrichtlinien
 
+## Situationserkennung — Was will der Nutzer?
+
+Wenn ein Nutzer etwas schreibt, erkenne zuerst die Situation und handle entsprechend. Lies dazu die passende Workflow-Datei und befolge die dortigen Anweisungen **direkt** — empfehle dem Nutzer KEINE Agenten oder Befehle, sondern handle selbst.
+
+| Nutzer will...                        | Richtiges Vorgehen                                                                                                                          |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Neue App / neues Projekt starten**  | Lies `.github/agents/projektstart.agent.md` und befolge den dortigen Workflow vollständig.                                                  |
+| **Feature hinzufügen / etwas ändern** | Befolge den **Universellen Änderungs-Workflow** (siehe unten). Lies bei Bedarf `.github/prompts/feature-hinzufuegen.prompt.md` für Details. |
+| **Fehler beheben**                    | Befolge den **Universellen Änderungs-Workflow**. Lies bei Bedarf `.github/prompts/fehler-beheben.prompt.md` für den Bugfix-Ablauf.          |
+| **Veröffentlichen / Release**         | Lies `.github/agents/veroeffentlichen.agent.md` und befolge den dortigen Workflow vollständig.                                              |
+| **Code verstehen / Erklärung**        | Lies `.github/agents/erklaerer.agent.md` und befolge den dortigen Erklärungsstil.                                                           |
+
+**Wichtig**: Wenn ein Projekt bereits existiert (`PROJEKT-STATUS.md` vorhanden), ist die Startphase vorbei. Neue Wünsche sind Features oder Bugfixes — kein Projektstart.
+
+## Universeller Änderungs-Workflow — gilt IMMER
+
+Diese Regeln gelten für **jeden Agenten** und den Default-Agent, sobald Änderungen an einem bestehenden Projekt gemacht werden:
+
+### Mehrere Wünsche = einzeln abarbeiten
+
+Wenn der Nutzer mehrere Dinge auf einmal möchte (z.B. "Ich hätte gerne A, B, C und D"):
+
+1. **Nicht alles auf einmal einbauen.** Jedes Feature/Bugfix ist eine eigene Einheit.
+2. Liste die Wünsche auf und frage: "Soll ich mit [Wunsch 1] anfangen?"
+3. Arbeite jeden Wunsch einzeln ab — mit dem **vollständigen Ablauf** (siehe unten).
+4. Nach jedem fertigen Wunsch: Zeige das Ergebnis, committe, und frage ob der nächste Wunsch dran ist.
+
+### Ablauf pro Änderung (Feature oder Bugfix)
+
+Für JEDE einzelne Änderung gilt diese Reihenfolge:
+
+1. **PROJEKT-STATUS.md und SPEC.md lesen** — Aktuellen Stand verstehen
+2. **README.md aktualisieren** — Falls die Änderung die Funktionsbeschreibung betrifft
+3. **SPEC.md aktualisieren** — Falls vorhanden, technische Details ergänzen
+4. **Code ändern** — Die eigentliche Implementierung
+5. **APP_VERSION anpassen** — Dev-Version setzen/erhöhen gemäß den Best Practices
+6. **CHANGELOG.md aktualisieren** — Eintrag unter `[Unreleased]` in der passenden Section
+7. **PROJEKT-STATUS.md aktualisieren** — Neuen Stand eintragen
+8. **Commit + Push** — Falls GitHub Pages aktiv ist (siehe "Automatisch veröffentlichen")
+9. **Ergebnis zeigen** — Dem Nutzer erklären was sich geändert hat
+
+> Dieser Ablauf steht auch detailliert in `.github/instructions/best-practices.instructions.md`. Im Zweifel gilt die dortige Beschreibung.
+
 ## Sprache und Kommunikation
 
 - Kommuniziere IMMER auf Deutsch — Erklärungen, Rückfragen, Vorschläge, alles auf Deutsch

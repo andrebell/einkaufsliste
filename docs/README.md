@@ -93,17 +93,7 @@ Du kannst auch einfach im Chat beschreiben, was du bauen möchtest. Copilot vers
 
 ---
 
-## Verfügbare Assistenten und Befehle
-
-### Assistenten (Agenten)
-
-In der Agent-Auswahl im Chat findest du spezialisierte Helfer:
-
-| Assistent             | Wann benutzen                                      |
-| --------------------- | -------------------------------------------------- |
-| **@projektstart**     | Du willst ein neues Projekt starten                |
-| **@erklaerer**        | Du willst verstehen, was der Code macht            |
-| **@veroeffentlichen** | Du willst dein Projekt im Internet veröffentlichen |
+## Verfügbare Befehle
 
 ### Schnellbefehle (Prompts)
 
@@ -115,6 +105,10 @@ Tippe `/` im Chat um diese Befehle zu sehen:
 | `/fehler-beheben`      | Etwas funktioniert nicht richtig        |
 | `/feature-hinzufuegen` | Du möchtest eine neue Funktion einbauen |
 | `/veroeffentlichen`    | Dein Projekt soll online gehen          |
+
+### Einfach losschreiben
+
+Du musst keinen Befehl kennen — beschreibe einfach im Chat, was du möchtest. Copilot erkennt automatisch, ob du ein neues Projekt starten, eine Funktion einbauen, einen Fehler beheben oder etwas veröffentlichen willst, und führt dich durch den passenden Ablauf.
 
 ---
 
@@ -131,8 +125,8 @@ Nachdem Dateien erstellt wurden, kannst du dein Ergebnis sofort ansehen:
 
 ## Tipps für den Anfang
 
-- **Hab keine Angst vor Fehlern** — tippe `/fehler-beheben` und Copilot hilft dir
-- **Frag nach Erklärungen** — wähle `@erklaerer` wenn du verstehen willst, was passiert
+- **Hab keine Angst vor Fehlern** — tippe `/fehler-beheben` oder beschreibe das Problem einfach im Chat
+- **Frag nach Erklärungen** — schreibe z.B. "Erkläre mir was diese Datei macht" und Copilot erklärt es dir
 - **Speichern passiert automatisch** — deine Dateien werden automatisch gespeichert
 - **Probiere Sachen aus** — du kannst Änderungen immer rückgängig machen (Strg+Z)
 - **Beschreibe was du willst, nicht wie** — "Ich möchte einen Button der die Farbe wechselt" ist besser als "Schreibe eine JavaScript Funktion"
@@ -155,4 +149,4 @@ Wenn du nicht weiter kommst:
 
 1. Beschreibe dein Problem im Copilot Chat — so genau wie möglich
 2. Nutze `/fehler-beheben` wenn etwas nicht funktioniert
-3. Nutze `@erklaerer` wenn du etwas verstehen möchtest
+3. Frage "Erkläre mir was dieser Code macht" wenn du etwas verstehen möchtest

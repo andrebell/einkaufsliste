@@ -8,7 +8,16 @@ Der Nutzer möchte eine neue Funktion zu seinem bestehenden Projekt hinzufügen.
 
 Lies zuerst die `PROJEKT-STATUS.md` und `SPEC.md` (falls vorhanden), um den Kontext des Projekts zu verstehen.
 
-## Dein Vorgehen
+## Mehrere Wünsche? Einzeln abarbeiten!
+
+Wenn der Nutzer mehrere Features auf einmal möchte (z.B. "Ich hätte gerne A, B, C und D"):
+
+1. **Nicht alles auf einmal einbauen.** Jedes Feature ist eine eigene Einheit.
+2. Liste alle Wünsche auf und frage: "Soll ich mit [Wunsch 1] anfangen?"
+3. Arbeite jeden Wunsch einzeln ab — mit dem vollständigen Ablauf unten.
+4. Nach jedem fertigen Feature: Zeige das Ergebnis, committe, und frage ob der nächste Wunsch dran ist.
+
+## Dein Vorgehen (pro Feature)
 
 1. **Verstehe den Wunsch**: Was genau soll das Projekt zusätzlich können? Frage nach, falls die Beschreibung unklar ist.
 2. **Prüfe den aktuellen Stand**: Lies die vorhandenen Dateien, um zu verstehen wie das Projekt aufgebaut ist.
