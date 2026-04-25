@@ -1,8 +1,11 @@
 // Current app version
-const APP_VERSION = "0.2.0-dev2";
+const APP_VERSION = "0.2.0-dev3";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
+
+// Track whether an animation is currently running
+let animating = false;
 
 // DOM elements
 const addForm = document.querySelector("#add-form");
@@ -128,6 +131,14 @@ function toggleItem(id) {
   const item = items.find((i) => i.id === id);
   if (!item) return;
 
+  // If an animation is running, finish it immediately and re-render
+  if (animating) {
+    animating = false;
+    sortByChecked();
+    saveItems(items);
+    renderList();
+  }
+
   item.checked = !item.checked;
   saveItems(items);
 
@@ -151,8 +162,7 @@ function toggleItem(id) {
   }
 
   // Calculate where it needs to go (last unchecked position)
-  const newItems = [...items];
-  const unchecked = newItems.filter((i) => !i.checked);
+  const unchecked = items.filter((i) => !i.checked);
   const targetIndex = unchecked.length; // Position after all unchecked items
   const moveBy = targetIndex - itemIndex; // How many positions to slide down
 
@@ -165,6 +175,8 @@ function toggleItem(id) {
 
   // Get the height of one item (including margin)
   const itemHeight = element.offsetHeight + parseFloat(getComputedStyle(element).marginBottom);
+
+  animating = true;
 
   // Animate the checked item sliding down
   element.classList.add("checked");
@@ -183,6 +195,7 @@ function toggleItem(id) {
     "transitionend",
     (e) => {
       if (e.propertyName !== "transform") return;
+      animating = false;
       sortByChecked();
       saveItems(items);
       renderList();
