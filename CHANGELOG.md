@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Items no longer appear crossed out but unchecked after animation
+- Sort and clear buttons no longer stay dark after tapping on mobile
 
 ## [0.1.0] - 2026-04-25
 

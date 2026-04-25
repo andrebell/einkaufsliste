@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.2.0-dev6
+0.2.0-dev7
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — README und SPEC mit allen neuen Features aktualisiert
+25.04.2026 — Button-Hover auf Touchscreens repariert (blieb dunkel kleben)
