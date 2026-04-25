@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.2.0-dev1
+0.2.0-dev2
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Abgehakte Einträge werden animiert ans Ende verschoben
+25.04.2026 — Abhak-Animation auf Slide-Down geändert

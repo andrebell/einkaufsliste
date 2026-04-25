@@ -124,25 +124,14 @@ main {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   margin-bottom: 0.5rem;
-  transition:
-    opacity 0.4s ease,
-    background-color 1.5s ease,
-    transform 0.4s ease;
+  transition: background-color 1.5s ease;
+  will-change: transform;
 }
 
 /* Highlight animation for newly added items */
 .shopping-item.highlight {
   background-color: rgba(74, 144, 217, 0.15);
   transition: none;
-}
-
-/* Animation for items moving to the bottom when checked */
-.shopping-item.moving-down {
-  opacity: 0.4;
-  transform: translateX(20px);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
 }
 
 /* Checkbox for marking items as done */

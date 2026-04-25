@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.2.0-dev1";
+const APP_VERSION = "0.2.0-dev2";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -123,37 +123,72 @@ function addItem(name) {
   }
 }
 
-// Toggle the checked state of an item (with animation)
+// Toggle the checked state of an item (with slide animation)
 function toggleItem(id) {
   const item = items.find((i) => i.id === id);
   if (!item) return;
 
-  // Find the DOM element for this item before changing state
-  const allItems = shoppingList.querySelectorAll(".shopping-item");
-  const itemIndex = items.indexOf(item);
-  const element = allItems[itemIndex];
-
   item.checked = !item.checked;
   saveItems(items);
 
-  if (item.checked && element) {
-    // Animate the item fading out, then re-render with new order
-    element.classList.add("moving-down");
-    element.addEventListener(
-      "transitionend",
-      () => {
-        sortByChecked();
-        saveItems(items);
-        renderList();
-      },
-      { once: true },
-    );
-  } else {
-    // Unchecking: move back up immediately
+  if (!item.checked) {
+    // Unchecking: re-sort and render immediately
     sortByChecked();
     saveItems(items);
     renderList();
+    return;
   }
+
+  // Get all visible list items and find the one being checked
+  const allElements = Array.from(shoppingList.querySelectorAll(".shopping-item"));
+  const itemIndex = items.indexOf(item);
+  const element = allElements[itemIndex];
+  if (!element) {
+    sortByChecked();
+    saveItems(items);
+    renderList();
+    return;
+  }
+
+  // Calculate where it needs to go (last unchecked position)
+  const newItems = [...items];
+  const unchecked = newItems.filter((i) => !i.checked);
+  const targetIndex = unchecked.length; // Position after all unchecked items
+  const moveBy = targetIndex - itemIndex; // How many positions to slide down
+
+  if (moveBy <= 0) {
+    sortByChecked();
+    saveItems(items);
+    renderList();
+    return;
+  }
+
+  // Get the height of one item (including margin)
+  const itemHeight = element.offsetHeight + parseFloat(getComputedStyle(element).marginBottom);
+
+  // Animate the checked item sliding down
+  element.classList.add("checked");
+  element.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+  element.style.transform = `translateY(${moveBy * itemHeight}px)`;
+  element.style.opacity = "0.6";
+
+  // Animate the items between old and new position sliding up
+  for (let i = itemIndex + 1; i <= itemIndex + moveBy && i < allElements.length; i++) {
+    allElements[i].style.transition = "transform 0.4s ease";
+    allElements[i].style.transform = `translateY(-${itemHeight}px)`;
+  }
+
+  // After animation ends, re-render with the new order
+  element.addEventListener(
+    "transitionend",
+    (e) => {
+      if (e.propertyName !== "transform") return;
+      sortByChecked();
+      saveItems(items);
+      renderList();
+    },
+    { once: true },
+  );
 }
 
 // Delete a single item from the list
