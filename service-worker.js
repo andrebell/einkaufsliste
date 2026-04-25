@@ -2,7 +2,7 @@
 // Always try to load the latest version from the server first.
 // Only use the cached version when offline.
 
-const CACHE_VERSION = "v0.3.1-dev1";
+const CACHE_VERSION = "v0.3.1-dev2";
 const CACHE_NAME = `app-cache-${CACHE_VERSION}`;
 
 // Files to cache for offline use
