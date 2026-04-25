@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev2";
+const APP_VERSION = "0.3.0-dev3";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -90,6 +90,19 @@ function renderList() {
     nameSpan.textContent = item.name;
     nameSpan.addEventListener("click", () => startEditItem(item.id, nameSpan));
 
+    // Item text container (name + added-by)
+    const textContainer = document.createElement("div");
+    textContainer.className = "item-text";
+    textContainer.appendChild(nameSpan);
+
+    // Show who added the item
+    if (item.addedBy) {
+      const addedBySpan = document.createElement("span");
+      addedBySpan.className = "item-added-by";
+      addedBySpan.textContent = item.addedBy;
+      textContainer.appendChild(addedBySpan);
+    }
+
     // Delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "btn-delete";
@@ -98,7 +111,7 @@ function renderList() {
     deleteBtn.addEventListener("click", () => deleteItem(item.id));
 
     li.appendChild(checkbox);
-    li.appendChild(nameSpan);
+    li.appendChild(textContainer);
     li.appendChild(deleteBtn);
     shoppingList.appendChild(li);
   });
@@ -117,6 +130,7 @@ function addItem(name) {
     id: Date.now(),
     name: trimmedName,
     checked: false,
+    addedBy: loadUsername() || "",
   };
 
   items.unshift(newItem);

@@ -10,7 +10,7 @@ PWA (Progressive Web App) — läuft im Browser, kann auf dem Handy installiert 
 
 ## Features
 
-1. **Eintrag hinzufügen** — Eingabefeld mit Bestätigung per kompaktem „+“-Button oder Enter-Taste. Neue Einträge werden oben in der Liste eingefügt und kurz in Blau hervorgehoben (Fade-Animation).
+1. **Eintrag hinzufügen** — Eingabefeld mit Bestätigung per kompaktem „+"-Button oder Enter-Taste. Neue Einträge werden oben in der Liste eingefügt und kurz in Blau hervorgehoben (Fade-Animation). Jeder Eintrag speichert den Namen des Nutzers, der ihn hinzugefügt hat.
 2. **Eintrag abhaken** — Per Tippen auf die Checkbox wird ein Eintrag als erledigt markiert. Abgehakte Einträge werden durchgestrichen dargestellt und gleiten mit einer Slide-Animation ans Ende der Liste.
 3. **Eintrag löschen** — Jeder Eintrag hat einen Löschen-Button, der ihn einzeln von der Liste entfernt.
 4. **Ganze Liste löschen** — Ein Button löscht alle Einträge auf einmal. Vor dem Löschen wird eine Sicherheitsabfrage angezeigt.

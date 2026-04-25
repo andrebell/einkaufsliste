@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.3.0-dev2
+0.3.0-dev3
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Nutzername einrichten und über Einstellungs-Button ändern
+25.04.2026 — Einträge zeigen an, wer sie hinzugefügt hat

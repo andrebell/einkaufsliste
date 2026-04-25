@@ -168,12 +168,27 @@ main {
   cursor: pointer;
 }
 
+/* Item text container (name + added-by) */
+.item-text {
+  flex: 1;
+  min-width: 0;
+}
+
 /* Item name text */
 .item-name {
   flex: 1;
   font-size: 1rem;
   word-break: break-word;
   cursor: text;
+  display: block;
+}
+
+/* Who added the item */
+.item-added-by {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 0.15rem;
 }
 
 /* Inline edit input for item names */
@@ -192,6 +207,10 @@ main {
 /* Checked items get a strikethrough and lighter color */
 .shopping-item.checked .item-name {
   text-decoration: line-through;
+  color: var(--color-checked);
+}
+
+.shopping-item.checked .item-added-by {
   color: var(--color-checked);
 }
 
