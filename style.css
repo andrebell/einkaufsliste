@@ -135,6 +135,12 @@ header h1 {
   background-color: rgba(217, 83, 79, 0.08);
 }
 
+.dropdown-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0;
+}
+
 /* ===========================
    Main content area
    =========================== */

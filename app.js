@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev6";
+const APP_VERSION = "0.3.0-dev7";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -98,8 +98,8 @@ function renderList() {
     textContainer.className = "item-text";
     textContainer.appendChild(nameSpan);
 
-    // Show who added the item
-    if (item.addedBy) {
+    // Show who added the item (only if it's someone else)
+    if (item.addedBy && item.addedBy !== loadUsername()) {
       const addedBySpan = document.createElement("span");
       addedBySpan.className = "item-added-by";
       addedBySpan.textContent = item.addedBy;
@@ -470,14 +470,17 @@ menuBtn.addEventListener("click", (e) => {
 
 // Close dropdown when clicking outside
 document.addEventListener("click", (e) => {
-  if (!dropdownMenu.classList.contains("hidden") && !dropdownMenu.contains(e.target)) {
+  if (
+    !dropdownMenu.classList.contains("hidden") &&
+    !dropdownMenu.contains(e.target)
+  ) {
     dropdownMenu.classList.add("hidden");
     menuBtn.setAttribute("aria-expanded", "false");
   }
 });
 
 // Close dropdown after any action button is clicked
-[shareBtn, sortBtn, clearCheckedBtn, clearAllBtn].forEach((btn) => {
+[shareBtn, sortBtn, clearCheckedBtn, clearAllBtn, settingsBtn].forEach((btn) => {
   btn.addEventListener("click", () => {
     dropdownMenu.classList.add("hidden");
     menuBtn.setAttribute("aria-expanded", "false");

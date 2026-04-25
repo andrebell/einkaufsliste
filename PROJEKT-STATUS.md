@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.3.0-dev6
+0.3.0-dev7
 
 ## Dateien
 
@@ -54,4 +54,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Titel linksbündig, Action-Buttons in Dropdown-Menü im Header verschoben
+25.04.2026 — Hamburger-Menü (☰), Name ändern im Menü, eigener Name wird nicht unter eigenen Einträgen angezeigt

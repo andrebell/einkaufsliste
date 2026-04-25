@@ -14,7 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Header title is now left-aligned
-- Action buttons moved from sticky bottom bar into a ⋯ dropdown menu in the header
+- Action buttons moved from sticky bottom bar into a ☰ hamburger menu in the header
+- "Name ändern" is now a menu item instead of a separate icon
+- Own name is no longer shown below your own items (only shows for items from others)
 
 ### Added
 
