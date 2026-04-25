@@ -19,6 +19,7 @@ PWA (Progressive Web App) — läuft im Browser, kann auf dem Handy installiert 
 7. **Eintrag bearbeiten** — Per Tippen auf den Namen eines Eintrags wird er zum Eingabefeld. Bestätigt wird mit Enter oder Tippen außerhalb. Escape bricht ab.
 8. **Daten speichern** — Die Liste wird automatisch im lokalen Speicher des Geräts gespeichert und beim nächsten Öffnen wiederhergestellt.
 9. **Offline-Nutzung** — Die App funktioniert auch ohne Internetverbindung (Service Worker mit Network-First Strategie).
+10. **Nutzername** — Beim ersten Start wird nach dem Namen gefragt. Der Name kann jederzeit über das Zahnrad-Symbol im Header geändert werden. Wird im localStorage gespeichert.
 
 ## Benutzeroberfläche
 

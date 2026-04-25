@@ -1,8 +1,9 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev1";
+const APP_VERSION = "0.3.0-dev2";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
+const USERNAME_KEY = "user-name";
 
 // Track whether an animation is currently running
 let animating = false;
@@ -16,6 +17,11 @@ const clearAllBtn = document.querySelector("#clear-all-btn");
 const clearCheckedBtn = document.querySelector("#clear-checked-btn");
 const sortBtn = document.querySelector("#sort-btn");
 const appVersionDisplay = document.querySelector("#app-version");
+const settingsBtn = document.querySelector("#settings-btn");
+const nameDialog = document.querySelector("#name-dialog");
+const nameDialogTitle = document.querySelector("#name-dialog-title");
+const nameForm = document.querySelector("#name-form");
+const nameInput = document.querySelector("#name-input");
 
 // Show the app version in the footer
 appVersionDisplay.textContent = APP_VERSION;
@@ -293,6 +299,42 @@ function sortAlphabetically() {
 }
 
 // ===========================
+// Username — Load, save, and edit
+// ===========================
+
+// Load the saved username
+function loadUsername() {
+  return localStorage.getItem(USERNAME_KEY) || "";
+}
+
+// Save the username
+function saveUsername(name) {
+  localStorage.setItem(USERNAME_KEY, name);
+}
+
+// Show the name dialog (for first setup or editing)
+function showNameDialog(isFirstTime) {
+  nameDialogTitle.textContent = isFirstTime
+    ? "Wie heißt du?"
+    : "Name ändern";
+  nameInput.value = isFirstTime ? "" : loadUsername();
+  nameDialog.classList.remove("hidden");
+  nameInput.focus();
+}
+
+// Handle name form submission
+nameForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = nameInput.value.trim();
+  if (name === "") return;
+  saveUsername(name);
+  nameDialog.classList.add("hidden");
+});
+
+// Handle settings button (edit name)
+settingsBtn.addEventListener("click", () => showNameDialog(false));
+
+// ===========================
 // Event listeners
 // ===========================
 
@@ -317,3 +359,8 @@ sortBtn.addEventListener("click", sortAlphabetically);
 // Initial render
 // ===========================
 renderList();
+
+// Ask for username on first visit
+if (!loadUsername()) {
+  showNameDialog(true);
+}

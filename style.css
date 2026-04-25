@@ -50,11 +50,33 @@ header {
   padding-top: calc(1rem + env(safe-area-inset-top));
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+  position: relative;
 }
 
 header h1 {
   font-size: 1.4rem;
   font-weight: 600;
+}
+
+/* Settings button in header */
+.btn-settings {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.btn-settings:hover,
+.btn-settings:focus {
+  opacity: 1;
 }
 
 /* ===========================
@@ -284,6 +306,73 @@ footer {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* ===========================
+   Dialog overlay — Used for name input
+   =========================== */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.dialog-box {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.dialog-hint {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.dialog-box input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  outline: none;
+  margin-bottom: 0.75rem;
+  transition: border-color 0.2s;
+}
+
+.dialog-box input:focus {
+  border-color: var(--color-accent);
+}
+
+.btn-accent {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(--color-accent-dark);
 }
 
 /* ===========================

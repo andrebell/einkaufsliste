@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Inline editing: tap on an item name to edit it (confirm with Enter, cancel with Escape)
+- Username setup on first visit with dialog prompt
+- Settings button (gear icon) in header to change username
 
 ## [0.2.0] - 2026-04-25
 

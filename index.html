@@ -27,6 +27,12 @@
   <body>
     <header>
       <h1>🛒 Einkaufsliste</h1>
+      <button
+        type="button"
+        id="settings-btn"
+        class="btn-settings"
+        aria-label="Einstellungen"
+      >⚙️</button>
     </header>
 
     <main>
@@ -69,6 +75,24 @@
 
     <!-- App logic -->
     <script src="app.js" defer></script>
+
+    <!-- Name dialog -->
+    <div id="name-dialog" class="dialog-overlay hidden">
+      <div class="dialog-box">
+        <h2 id="name-dialog-title">Wie heißt du?</h2>
+        <p class="dialog-hint">Dein Name wird bei geteilten Einträgen angezeigt.</p>
+        <form id="name-form">
+          <input
+            type="text"
+            id="name-input"
+            placeholder="Dein Name"
+            autocomplete="name"
+            required
+          />
+          <button type="submit" class="btn-accent">Speichern</button>
+        </form>
+      </div>
+    </div>
 
     <!-- Service Worker Registration -->
     <script>
