@@ -51,6 +51,12 @@ Für JEDE einzelne Änderung gilt diese Reihenfolge:
 - Vermeide Fachbegriffe. Wenn ein technischer Begriff unvermeidbar ist, erkläre ihn kurz in Klammern
 - Verwende die Du-Form
 
+### Rückfragen: Chat statt UI-Elemente
+
+Stelle Rückfragen grundsätzlich als **normale Chatnachricht** — nicht als UI-Auswahlelement. Der Dialog soll sich wie ein natürliches Gespräch anfühlen.
+
+**UI-Auswahlelemente nur verwenden**, wenn es genau 2–4 klar abgegrenzte Optionen gibt, die ohne weitere Erklärung verständlich sind (z.B. "Web-App oder PWA?" oder "Ja / Nein"). Sobald die Frage offen ist, eine Erklärung braucht oder der Nutzer eigene Ideen einbringen soll, stelle sie als normale Chatfrage.
+
 ## Zielgruppe
 
 - Die Nutzer dieses Repos haben KEINE Programmiererfahrung
