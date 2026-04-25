@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.2.0-dev3";
+const APP_VERSION = "0.2.0-dev4";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -151,7 +151,9 @@ function toggleItem(id) {
   }
 
   // Get all visible list items and find the one being checked
-  const allElements = Array.from(shoppingList.querySelectorAll(".shopping-item"));
+  const allElements = Array.from(
+    shoppingList.querySelectorAll(".shopping-item"),
+  );
   const itemIndex = items.indexOf(item);
   const element = allElements[itemIndex];
   if (!element) {
@@ -174,7 +176,8 @@ function toggleItem(id) {
   }
 
   // Get the height of one item (including margin)
-  const itemHeight = element.offsetHeight + parseFloat(getComputedStyle(element).marginBottom);
+  const itemHeight =
+    element.offsetHeight + parseFloat(getComputedStyle(element).marginBottom);
 
   animating = true;
 
@@ -185,23 +188,30 @@ function toggleItem(id) {
   element.style.opacity = "0.6";
 
   // Animate the items between old and new position sliding up
-  for (let i = itemIndex + 1; i <= itemIndex + moveBy && i < allElements.length; i++) {
+  for (
+    let i = itemIndex + 1;
+    i <= itemIndex + moveBy && i < allElements.length;
+    i++
+  ) {
     allElements[i].style.transition = "transform 0.4s ease";
     allElements[i].style.transform = `translateY(-${itemHeight}px)`;
   }
 
   // After animation ends, re-render with the new order
-  element.addEventListener(
-    "transitionend",
-    (e) => {
-      if (e.propertyName !== "transform") return;
-      animating = false;
-      sortByChecked();
-      saveItems(items);
-      renderList();
-    },
-    { once: true },
-  );
+  let animationDone = false;
+  const finishAnimation = () => {
+    if (animationDone) return;
+    animationDone = true;
+    animating = false;
+    sortByChecked();
+    saveItems(items);
+    renderList();
+  };
+
+  element.addEventListener("transitionend", finishAnimation, { once: true });
+
+  // Safety timeout in case transitionend doesn't fire
+  setTimeout(finishAnimation, 500);
 }
 
 // Delete a single item from the list

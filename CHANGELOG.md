@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New items briefly highlight in blue before fading to white
 - Checked items animate and move to the bottom of the list
 
+### Fixed
+
+- Items no longer appear crossed out but unchecked after animation
+
 ## [0.1.0] - 2026-04-25
 
 ### Added
