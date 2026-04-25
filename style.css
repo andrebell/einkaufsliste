@@ -124,7 +124,15 @@ main {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   margin-bottom: 0.5rem;
-  transition: opacity 0.2s;
+  transition:
+    opacity 0.2s,
+    background-color 1.5s ease;
+}
+
+/* Highlight animation for newly added items */
+.shopping-item.highlight {
+  background-color: rgba(74, 144, 217, 0.15);
+  transition: none;
 }
 
 /* Checkbox for marking items as done */

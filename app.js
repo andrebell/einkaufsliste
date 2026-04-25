@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.1.0";
+const APP_VERSION = "0.2.0-dev0";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -89,7 +89,7 @@ function renderList() {
 // Actions — Add, toggle, delete items
 // ===========================
 
-// Add a new item to the list
+// Add a new item to the list (inserted at the top)
 function addItem(name) {
   const trimmedName = name.trim();
   if (trimmedName === "") return;
@@ -100,9 +100,20 @@ function addItem(name) {
     checked: false,
   };
 
-  items.push(newItem);
+  items.unshift(newItem);
   saveItems(items);
   renderList();
+
+  // Add highlight class to the new item, then remove it to trigger the fade
+  const newElement = shoppingList.firstElementChild;
+  if (newElement) {
+    newElement.classList.add("highlight");
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        newElement.classList.remove("highlight");
+      });
+    });
+  }
 }
 
 // Toggle the checked state of an item

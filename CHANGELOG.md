@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- New items are inserted at the top of the list
+- New items briefly highlight in blue before fading to white
+
 ## [0.1.0] - 2026-04-25
 
 ### Added
