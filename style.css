@@ -52,6 +52,18 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+
+/* Fill the notch/status bar area behind the header with the same dark color */
+header::before {
+  content: "";
+  position: absolute;
+  top: calc(-1 * env(safe-area-inset-top));
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top);
+  background-color: var(--color-primary);
 }
 
 header h1 {

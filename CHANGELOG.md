@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- iPhone notch area now shows dark header color in Safari (instead of light background bleeding through)
+
 ## [0.3.0] - 2026-04-25
 
 ### Fixed
