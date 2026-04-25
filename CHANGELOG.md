@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Username setup on first visit with dialog prompt
 - Settings button (gear icon) in header to change username
 - Items now store and display who added them (shown below item name)
+- Share button to send the list via Web Share API (AirDrop, WhatsApp, etc.)
+- Import dialog: opening a shared link shows a preview and adds items to the list
 
 ## [0.2.0] - 2026-04-25
 

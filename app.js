@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.3.0-dev3";
+const APP_VERSION = "0.3.0-dev4";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -22,6 +22,12 @@ const nameDialog = document.querySelector("#name-dialog");
 const nameDialogTitle = document.querySelector("#name-dialog-title");
 const nameForm = document.querySelector("#name-form");
 const nameInput = document.querySelector("#name-input");
+const shareBtn = document.querySelector("#share-btn");
+const importDialog = document.querySelector("#import-dialog");
+const importInfo = document.querySelector("#import-info");
+const importPreview = document.querySelector("#import-preview");
+const importConfirmBtn = document.querySelector("#import-confirm-btn");
+const importCancelBtn = document.querySelector("#import-cancel-btn");
 
 // Show the app version in the footer
 appVersionDisplay.textContent = APP_VERSION;
@@ -349,6 +355,117 @@ nameForm.addEventListener("submit", (event) => {
 settingsBtn.addEventListener("click", () => showNameDialog(false));
 
 // ===========================
+// Sharing — Export and import lists via URL
+// ===========================
+
+// Pending items waiting to be imported
+let pendingImport = [];
+
+// Share the current list as a URL
+function shareList() {
+  const uncheckedItems = items.filter((i) => !i.checked);
+  if (uncheckedItems.length === 0) return;
+
+  // Encode only name and addedBy for each item
+  const shareData = uncheckedItems.map((i) => ({
+    name: i.name,
+    addedBy: i.addedBy || loadUsername(),
+  }));
+
+  const encoded = btoa(
+    unescape(encodeURIComponent(JSON.stringify(shareData))),
+  );
+  const shareUrl =
+    window.location.origin + window.location.pathname + "?import=" + encoded;
+
+  // Use Web Share API if available (AirDrop, WhatsApp, etc.)
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Einkaufsliste",
+        text: `${loadUsername()} teilt eine Einkaufsliste mit ${uncheckedItems.length} Einträgen`,
+        url: shareUrl,
+      })
+      .catch(() => {
+        // User cancelled sharing — that's ok
+      });
+  } else {
+    // Fallback: copy URL to clipboard
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      alert("Link wurde in die Zwischenablage kopiert!");
+    });
+  }
+}
+
+// Check if the URL contains shared list data
+function checkForImport() {
+  const params = new URLSearchParams(window.location.search);
+  const importData = params.get("import");
+  if (!importData) return;
+
+  try {
+    const decoded = JSON.parse(
+      decodeURIComponent(escape(atob(importData))),
+    );
+
+    if (!Array.isArray(decoded) || decoded.length === 0) return;
+
+    // Validate and sanitize imported items
+    pendingImport = decoded
+      .filter((i) => typeof i.name === "string" && i.name.trim() !== "")
+      .map((i) => ({
+        name: i.name.trim(),
+        addedBy: typeof i.addedBy === "string" ? i.addedBy.trim() : "",
+      }));
+
+    if (pendingImport.length === 0) return;
+
+    // Show import dialog with preview
+    const senderName = pendingImport[0].addedBy || "Jemand";
+    importInfo.textContent = `${senderName} möchte ${pendingImport.length} Einträge mit dir teilen:`;
+    importPreview.innerHTML = "";
+    pendingImport.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item.name;
+      importPreview.appendChild(li);
+    });
+    importDialog.classList.remove("hidden");
+  } catch (e) {
+    // Invalid data — ignore silently
+  }
+
+  // Clean the URL (remove import parameter)
+  const cleanUrl = window.location.origin + window.location.pathname;
+  window.history.replaceState({}, "", cleanUrl);
+}
+
+// Confirm importing shared items
+importConfirmBtn.addEventListener("click", () => {
+  pendingImport.forEach((importItem) => {
+    const newItem = {
+      id: Date.now() + Math.random(),
+      name: importItem.name,
+      checked: false,
+      addedBy: importItem.addedBy,
+    };
+    items.unshift(newItem);
+  });
+  saveItems(items);
+  renderList();
+  importDialog.classList.add("hidden");
+  pendingImport = [];
+});
+
+// Cancel import
+importCancelBtn.addEventListener("click", () => {
+  importDialog.classList.add("hidden");
+  pendingImport = [];
+});
+
+// Handle share button
+shareBtn.addEventListener("click", shareList);
+
+// ===========================
 // Event listeners
 // ===========================
 
@@ -373,6 +490,9 @@ sortBtn.addEventListener("click", sortAlphabetically);
 // Initial render
 // ===========================
 renderList();
+
+// Check if someone shared a list with us
+checkForImport();
 
 // Ask for username on first visit
 if (!loadUsername()) {

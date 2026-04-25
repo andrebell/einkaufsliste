@@ -11,6 +11,7 @@ Eine einfache Einkaufslisten-App für das Handy. Damit behältst du im Supermark
 - **Liste sortieren** — Per Knopfdruck die Einträge alphabetisch (A–Z) ordnen
 - **Erledigte löschen** — Alle abgehakten Einträge auf einmal entfernen
 - **Ganze Liste löschen** — Nach dem Einkauf die komplette Liste auf einmal leeren
+- **Liste teilen** — Teile deine offenen Einträge per AirDrop, WhatsApp oder anderen Apps. Der Empfänger öffnet den Link und kann die Einträge direkt in seine Liste übernehmen — mit dem Namen des Absenders.
 
 ## Für wen?
 

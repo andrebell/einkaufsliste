@@ -20,6 +20,7 @@ PWA (Progressive Web App) — läuft im Browser, kann auf dem Handy installiert 
 8. **Daten speichern** — Die Liste wird automatisch im lokalen Speicher des Geräts gespeichert und beim nächsten Öffnen wiederhergestellt.
 9. **Offline-Nutzung** — Die App funktioniert auch ohne Internetverbindung (Service Worker mit Network-First Strategie).
 10. **Nutzername** — Beim ersten Start wird nach dem Namen gefragt. Der Name kann jederzeit über das Zahnrad-Symbol im Header geändert werden. Wird im localStorage gespeichert.
+11. **Liste teilen** — Per „Teilen"-Button werden die offenen (nicht abgehakten) Einträge als base64-kodierte URL geteilt. Nutzt die Web Share API (AirDrop, WhatsApp etc.) oder kopiert den Link in die Zwischenablage. Beim Öffnen einer geteilten URL werden die Einträge mit Vorschau-Dialog importiert.
 
 ## Benutzeroberfläche
 

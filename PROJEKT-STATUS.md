@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.3.0-dev3
+0.3.0-dev4
 
 ## Dateien
 
@@ -30,7 +30,14 @@ Alle geplanten Features sind implementiert:
 - ✅ Einträge hinzufügen (Eingabefeld + Button/Enter)
 - ✅ Einträge abhaken (Checkbox mit Durchstreichen)
 - ✅ Einzelne Einträge löschen (✕-Button)
+- ✅ Einträge bearbeiten (Tippen auf den Namen)
 - ✅ Ganze Liste löschen (mit Sicherheitsabfrage)
+- ✅ Erledigte löschen
+- ✅ Alphabetisch sortieren (A–Z)
+- ✅ Nutzername einrichten und ändern (Zahnrad im Header)
+- ✅ Name bei Einträgen anzeigen (wer hat was hinzugefügt)
+- ✅ Liste teilen per Web Share API / Link (Import mit Vorschau-Dialog)
+- ✅ Sticky Action-Buttons (bleiben am unteren Bildschirmrand)
 - ✅ Daten bleiben nach dem Schließen gespeichert (localStorage)
 - ✅ Offline-Nutzung (Service Worker)
 - ✅ Installierbar auf dem Handy (PWA)
@@ -38,14 +45,13 @@ Alle geplanten Features sind implementiert:
 ## Veröffentlichung
 
 - GitHub Pages: aktiv
-- URL: https://andrebell.github.io/einkaufsliste/
+- URL: https://andre-bell.de/einkaufsliste/
 - PWA: ja
 
 ## Offene Punkte
 
-- GitHub Pages einrichten, damit die App auf dem Handy nutzbar ist
-- Mögliche Erweiterungen: Kategorien, Sortierung, Mengenangaben
+- Version 0.3.0 veröffentlichen (Release)
 
 ## Letzte Änderung
 
-25.04.2026 — Einträge zeigen an, wer sie hinzugefügt hat
+25.04.2026 — Liste teilen per Share-Button mit Import-Funktion
