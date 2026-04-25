@@ -33,6 +33,7 @@ applyTo: "**/*.html,**/*.css,**/*.js"
 - Verwende englische Variablen- und Funktionsnamen (camelCase: `shoppingList`, `addItem()`)
 - Verwende `async/await` statt verschachtelte `.then()`-Ketten wenn Daten geladen werden
 - Kein jQuery, kein React, kein Framework — nur reines JavaScript (außer der Nutzer fragt explizit)
+- URL data ist immer base64 kodiert, damit keine Sonderzeichen Probleme machen
 
 ## Barrierefreiheit
 

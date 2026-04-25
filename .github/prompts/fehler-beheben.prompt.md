@@ -6,20 +6,21 @@ argument-hint: "Beschreibe was nicht funktioniert, z.B.: Die Seite zeigt nichts 
 
 Der Nutzer hat ein Problem mit seinem Projekt. Hilf ihm auf Deutsch, den Fehler zu finden und zu beheben.
 
-Lies zuerst die `PROJEKT-STATUS.md` (falls vorhanden), um den Kontext des Projekts zu verstehen.
+Lies zuerst die `PROJEKT-STATUS.md` und `SPEC.md` (falls vorhanden), um den Kontext des Projekts zu verstehen.
 
 ## Dein Vorgehen
 
 1. **Verstehe das Problem**: Frage nach, was genau passiert (oder nicht passiert). Wenn der Nutzer eine Fehlermeldung hat, lass sie dir zeigen.
 2. **Finde die Ursache**: Lies die relevanten Dateien und suche nach dem Fehler. Erkläre dem Nutzer in einfachen Worten, was das Problem ist.
 3. **Erkläre den Fehler**: Sage nicht nur was falsch ist, sondern auch WARUM es nicht funktioniert. Nutze einfache Vergleiche.
-4. **Behebe den Fehler**: Nimm die nötige Änderung vor und erkläre was du geändert hast.
-5. **Version erhöhen**: Erhöhe die PATCH-Versionsnummer (z.B. `0.2.0` → `0.2.1`) im Code. Bei PWAs auch die Cache-Version im Service Worker anpassen.
-6. **Changelog aktualisieren**: Füge einen neuen Eintrag in die `CHANGELOG.md` ein (auf Englisch, gemäß dem Template-Format, z.B. `- [v0.2.1] Fixed: Empty items could be added to the list`).
-7. **Aktualisiere `PROJEKT-STATUS.md`**: Trage den behobenen Fehler und die neue Version ein.
-8. **Zeige wie man prüft**: Erkläre dem Nutzer, wie er sehen kann ob das Problem gelöst ist.
-9. **Veröffentlichen**: Wenn in `PROJEKT-STATUS.md` steht dass GitHub Pages aktiv ist, committe mit dem gleichen Format wie der Changelog-Eintrag (z.B. `[v0.2.1] Fixed: Display error with empty list`) und pushe.
-10. **Vorbeugung**: Gib einen kurzen Tipp, wie man diesen Fehler in Zukunft vermeiden kann.
+4. **Dokumentation aktualisieren**: Falls der Fehler eine Änderung an der Funktionsweise verursacht, aktualisiere zuerst die `README.md`, dann die `SPEC.md` und erst dann den Code.
+5. **Behebe den Fehler**: Nimm die nötige Änderung am Code vor und erkläre was du geändert hast.
+6. **Version erhöhen**: Erhöhe die PATCH-Versionsnummer (z.B. `0.2.0` → `0.2.1`) im Code. Bei PWAs auch die Cache-Version im Service Worker anpassen.
+7. **Changelog aktualisieren**: Füge einen neuen Eintrag in die `CHANGELOG.md` ein (auf Englisch, gemäß dem Template-Format, z.B. `- [v0.2.1] Fixed: Empty items could be added to the list`).
+8. **Aktualisiere `PROJEKT-STATUS.md`**: Trage den behobenen Fehler und die neue Version ein.
+9. **Zeige wie man prüft**: Erkläre dem Nutzer, wie er sehen kann ob das Problem gelöst ist.
+10. **Veröffentlichen**: Wenn in `PROJEKT-STATUS.md` steht dass GitHub Pages aktiv ist, committe mit dem gleichen Format wie der Changelog-Eintrag (z.B. `[v0.2.1] Fixed: Display error with empty list`) und pushe.
+11. **Vorbeugung**: Gib einen kurzen Tipp, wie man diesen Fehler in Zukunft vermeiden kann.
 
 ## Wichtige Regeln
 

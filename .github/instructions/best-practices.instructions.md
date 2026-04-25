@@ -5,6 +5,16 @@ applyTo: "**/*.html,**/*.css,**/*.js,**/*.json"
 
 # Best Practices
 
+## Reihenfolge bei Änderungen: README → SPEC → Code
+
+Bei jeder Änderung am Projekt gilt die Reihenfolge:
+
+1. **README.md** — Projektbeschreibung aktualisieren (was die App kann, für wen sie ist)
+2. **SPEC.md** — Spezifikation aktualisieren (technische Details, Feature-Liste)
+3. **Code** — Implementierung anpassen
+
+So bleibt die Dokumentation immer aktuell und Agenten in neuen Chats verstehen sofort, was die App tut und wie sie aufgebaut ist.
+
 ## Versionierung
 
 Jedes Projekt hat eine Versionsnummer nach dem Schema `MAJOR.MINOR.PATCH` (z.B. `1.0.0`).
@@ -59,13 +69,15 @@ Jeder Commit bekommt die Versionsnummer und Kategorie als Prefix in der Commit-N
 
 ### Ablauf bei Änderungen
 
-1. Änderungen am Code vornehmen
-2. Versionsnummer im Code erhöhen (Feature → Minor, Bugfix → Patch)
-3. Bei PWA: Cache-Version im Service Worker ebenfalls anpassen
-4. `CHANGELOG.md` aktualisieren (neuen Eintrag oben hinzufügen)
-5. `PROJEKT-STATUS.md` aktualisieren
-6. Commit mit Versionsprefix erstellen
-7. Bei aktivem GitHub Pages: Push durchführen
+1. `README.md` aktualisieren (falls die Änderung die Funktionsbeschreibung betrifft)
+2. `SPEC.md` aktualisieren (falls vorhanden)
+3. Änderungen am Code vornehmen
+4. Versionsnummer im Code erhöhen (Feature → Minor, Bugfix → Patch)
+5. Bei PWA: Cache-Version im Service Worker ebenfalls anpassen
+6. `CHANGELOG.md` aktualisieren (neuen Eintrag oben hinzufügen)
+7. `PROJEKT-STATUS.md` aktualisieren
+8. Commit mit Versionsprefix erstellen
+9. Bei aktivem GitHub Pages: Push durchführen
 
 ## Changelog
 
@@ -75,6 +87,7 @@ Jedes Projekt führt eine `CHANGELOG.md` im Projektstamm. Sie dokumentiert alle 
 - **Sprache**: Englisch (Entwicklungsdokument)
 - **Format**: Dem Template in `CHANGELOG.md` folgen — Kategorien wie `Added`, `Changed`, `Fixed`, `Removed` verwenden
 - **Beispiel**: `- [v0.2.0] Added: Search function to filter list items`
+- Sollten sich mehrere Änderungen in einer Version ansammeln, können sie unter der gleichen Versionsnummer gruppiert werden. Hierfür können die Einträge wie `Added: xyz` oder `Fixed: abc` als eine eingerückte Liste unter der Versionsnummer formatiert werden.
 
 Beim **Erstellen eines neuen Projekts** wird das vorhandene `CHANGELOG.md` Template beibehalten und der erste Eintrag ergänzt.
 
