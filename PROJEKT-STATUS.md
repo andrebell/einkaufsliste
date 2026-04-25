@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.2.0-dev9
+0.2.0
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — iPhone Safe Areas (Notch/Home-Bereich) farblich angepasst
+25.04.2026 — Version 0.2.0 veröffentlicht
