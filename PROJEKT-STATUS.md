@@ -10,7 +10,7 @@ PWA (Progressive Web App)
 
 ## Version
 
-0.2.0-dev0
+0.2.0-dev1
 
 ## Dateien
 
@@ -48,4 +48,4 @@ Alle geplanten Features sind implementiert:
 
 ## Letzte Änderung
 
-25.04.2026 — Neue Einträge werden oben eingefügt und kurz blau hervorgehoben
+25.04.2026 — Abgehakte Einträge werden animiert ans Ende verschoben

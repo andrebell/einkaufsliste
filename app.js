@@ -1,5 +1,5 @@
 // Current app version
-const APP_VERSION = "0.2.0-dev0";
+const APP_VERSION = "0.2.0-dev1";
 
 // Storage key for localStorage
 const STORAGE_KEY = "shopping-list";
@@ -36,6 +36,13 @@ let items = loadItems();
 // ===========================
 // Rendering — Display items on screen
 // ===========================
+
+// Sort items: unchecked first, checked last (preserving order within each group)
+function sortByChecked() {
+  const unchecked = items.filter((i) => !i.checked);
+  const checked = items.filter((i) => i.checked);
+  items = [...unchecked, ...checked];
+}
 
 // Render the entire shopping list
 function renderList() {
@@ -116,11 +123,34 @@ function addItem(name) {
   }
 }
 
-// Toggle the checked state of an item
+// Toggle the checked state of an item (with animation)
 function toggleItem(id) {
   const item = items.find((i) => i.id === id);
-  if (item) {
-    item.checked = !item.checked;
+  if (!item) return;
+
+  // Find the DOM element for this item before changing state
+  const allItems = shoppingList.querySelectorAll(".shopping-item");
+  const itemIndex = items.indexOf(item);
+  const element = allItems[itemIndex];
+
+  item.checked = !item.checked;
+  saveItems(items);
+
+  if (item.checked && element) {
+    // Animate the item fading out, then re-render with new order
+    element.classList.add("moving-down");
+    element.addEventListener(
+      "transitionend",
+      () => {
+        sortByChecked();
+        saveItems(items);
+        renderList();
+      },
+      { once: true },
+    );
+  } else {
+    // Unchecking: move back up immediately
+    sortByChecked();
     saveItems(items);
     renderList();
   }
